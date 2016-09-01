@@ -18,16 +18,16 @@
             $actionName = $routes[2];
         }
 
-        $model_name = $controllerName;
         if($controllerName == 'index.php'){
             header('Location: /', true, 302);
         }
         $controllerName = ucfirst($controllerName).'Controller';
+        $model = $controllerName;
 
         $actionName = 'action'.ucfirst($actionName);
 
 
-        $model_file = $model_name.'.php';
+        $model_file = $model.'.php';
         $model_path = $baseDir.'models/'.$model_file;
         if(file_exists($model_path)){
             include $model_path;
