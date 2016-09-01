@@ -22,9 +22,9 @@
         if($controllerName == 'index.php'){
             header('Location: /', true, 302);
         }
-        $controllerName = lcfirst($controllerName).'Controller';
+        $controllerName = ucfirst($controllerName).'Controller';
 
-        $actionName = 'action'.lcfirst($actionName);
+        $actionName = 'action'.ucfirst($actionName);
 
 
         $model_file = $model_name.'.php';
