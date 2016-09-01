@@ -1,6 +1,7 @@
 <? class Route{
 
     public static function start(){
+        $baseDir = __DIR__.'/../../application/';
 
         $controller_name = 'Site';
         $action_name = 'index';
@@ -13,11 +14,9 @@
             $controller_name = $routes[1];
         }
 
-
         if(!empty($routes[2])){
             $action_name = $routes[2];
         }
-
 
         $model_name = $controller_name;
         if($controller_name == 'index.php'){
@@ -29,17 +28,16 @@
 
 
         $model_file = $model_name.'.php';
-        $model_path = 'application/models/'.$model_file;
+        $model_path = $baseDir.'/models/'.$model_file;
         if(file_exists($model_path)){
-            include 'application/models/'.$model_file;
+            include $model_path;
         }
 
         $controller_file = $controller_name.'.php';
-        $controller_path = 'application/controllers/'.$controller_file;
+        $controller_path = $baseDir.'/controllers/'.$controller_file;
         if(file_exists($controller_path)){
-            include 'application/controllers/'.$controller_file;
+            include $controller_path;
         } else{
-
             throw new ErrorException(sprintf('Контроллер %s не найден', $controller_name));
         }
 
