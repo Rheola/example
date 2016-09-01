@@ -22,7 +22,7 @@
         if($controller_name == 'index.php'){
             header('Location: /', true, 302);
         }
-        $controller_name = $controller_name.'Controller';
+        $controller_name = lcfirst($controller_name).'Controller';
 
         $action_name = 'action'.lcfirst($action_name);
 
