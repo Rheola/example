@@ -28,13 +28,13 @@
 
 
         $model_file = $model_name.'.php';
-        $model_path = $baseDir.'/models/'.$model_file;
+        $model_path = $baseDir.'models/'.$model_file;
         if(file_exists($model_path)){
             include $model_path;
         }
 
         $controller_file = $controller_name.'.php';
-        $controller_path = $baseDir.'/controllers/'.$controller_file;
+        $controller_path = $baseDir.'controllers/'.$controller_file;
         if(file_exists($controller_path)){
             include $controller_path;
         } else{
