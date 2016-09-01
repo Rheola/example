@@ -12,7 +12,8 @@ class DbCommand{
 
 
     public function __construct(){
-        $this->pdo = new PDO('sqlite:application/database/database.db');
+        $connect_string = sprintf('sqlite:%s/../../application/database/database.db', __DIR__);
+        $this->pdo = new PDO($connect_string);
     }
 
     /**
