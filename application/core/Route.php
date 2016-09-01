@@ -21,9 +21,9 @@
         if($controllerName == 'index.php'){
             header('Location: /', true, 302);
         }
-        $controllerName = ucfirst($controllerName).'Controller';
-        $model = $controllerName;
+        $model = ucfirst($controllerName);
 
+        $controllerName = ucfirst($controllerName).'Controller';
         $actionName = 'action'.ucfirst($actionName);
 
 
